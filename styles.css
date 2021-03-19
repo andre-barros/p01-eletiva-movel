@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  /* background-image: linear-gradient(to right top, #ff2f55, #d61c6e, #a22579, #6a2b74, #342961,#021f44); */
+}
+
+.title {
+  /* color: #FFF; */
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 10px;
+}
+
+.loading {
+  margin: 200px auto;
+  display: block;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  width: 30%;
+  height: 400px;
+  border: 1px solid #000;
+}
+
+.image {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;  
+}
+
+.container-btn {
+  width: 100%;
+  min-height: 10%;
+  margin: 0px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  max-height: 0px !important;
+}
+
+.btn:hover {
+  color: #000;
+}
+
+.annotation {
+  width: 100%;
+  min-height: 20%;
+  margin: 0px !important;
+  overflow: scroll;
+}
+
+.favourite {
+  max-width: 30% !important;
+ 
+}
+
+.annotate {
+  max-width: 30% !important;
+}
+
+.remove {
+  max-width: 30% !important;
+}
+
+.save {
+  margin: 8px 0px !important;
+}
+
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 2rem auto;
+  cursor: crosshair;
+}
+
+@media (max-width: 1024px){
+  div {
+    width: 90%;
+  }
+}
+
+p:nth-of-type(1) {
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+p:nth-of-type(2) {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  text-align: left;
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: relative;
+  background: none;
+  width: 100%;
+  margin: 0px 1%;
+  padding: 15px 10px;
+  color: black;
+  border: 1px solid black;
+  transition: 0.5s;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a span {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: black;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  z-index: -1;
+}
+
+a:hover span {
+  width: 800px;
+  height: 800px;
+}
+
+a:hover {
+  color: white;
+}
+
+.modal:target{
+  opacity: 1;
+  z-index: 999;
+  pointer-events: auto;
+}
+.modal{
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-container{
+  max-width: 30rem;
+  min-width: 30rem;
+  background: white;
+  padding: 0 2rem 1rem;;
+  border-radius: 0.25rem;
+}
+.modal-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 100%;
+}
+
+.modal-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 95%;
+  height: 100%;
+  text-align: center;
+}
+
+.close-button{
+  margin: 0px;
+  font-size: 2rem;
+	color: gray;
+  border: none;
+}
+
+.modal p{
+	line-height: 1.5;
+}
+#modal input[type=text]{
+    margin: 0px !important;
+    width:500px;
+    border:2px solid #ccc;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[type=text]:focus{
+    border-color: #000;
+    box-shadow:0 0 8px 0 #000;
+  }
